@@ -22,7 +22,7 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@ekizr_",
+    subText: "@yashkukreja26",
     icon: Instagram,
     url: "https://www.instagram.com/yashkukreja26?igsh=MTg5dHZybDZ3cjRvaQ==",
     color: "#E4405F",
@@ -31,7 +31,7 @@ const socialLinks = [
   {
     name: "YouTube",
     displayName: "Youtube",
-    subText: "@eki zulfar",
+    subText: "@yashkukreja",
     icon: Youtube,
     url: "https://youtube.com/@yashkukreja-t2v?si=uEicK0q3c2u1wjpK",
     color: "#FF0000",
@@ -40,7 +40,7 @@ const socialLinks = [
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@EkiZR",
+    subText: "@yashkukreja",
     icon: Github,
     url: "https://github.com/Yashkukreja26?tab=projects",
     color: "#ffffff",
@@ -49,7 +49,7 @@ const socialLinks = [
   {
      name: "Twitter",
     displayName: "Twitter",
-    subText: "@your_handle",
+    subText: "@yashkukreja",
     icon: Twitter,
     url: "https://twitter.com/your_handle",
     color: "#1DA1F2",
