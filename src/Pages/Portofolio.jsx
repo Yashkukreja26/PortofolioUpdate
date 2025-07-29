@@ -561,14 +561,14 @@ export default function FullWidthTabs() {
         </p>
 
         {/* Project Link */}
-        <div className="mt-4">
-          <a
-            href="https://drive.google.com/drive/folders/1Mtwsu3hm_v2TdnfCrUXpQ8-8-RWj7XI7?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-400 hover:underline text-sm md:text-base"
-          >
-            → View Projects
+      <div className="mt-4">
+  <a
+    href="https://drive.google.com/drive/folders/1Mtwsu3hm_v2TdnfCrUXpQ8-8-RWj7XI7?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white text-base font-semibold shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+  >
+    <span> 📁 Access My Projects</span>
           </a>
         </div>
       </div>
