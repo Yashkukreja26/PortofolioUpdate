@@ -1,4 +1,5 @@
 import React, { useEffect, memo, useMemo } from "react";
+
 import {
   FileText,
   Code,
@@ -266,6 +267,8 @@ const AboutPage = () => {
 
           <ProfileImage />
         </div>
+      
+   
 
         <a href="#Portofolio">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
