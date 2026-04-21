@@ -255,7 +255,7 @@ const Home = () => {
                   }`}
                 >
                   <img
-                    src="/coding.gif"
+                    src="/yashbg.png"
                     alt="Coding Animation"
                     className="w-full h-full object-contain"
                   />

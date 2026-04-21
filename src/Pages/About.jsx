@@ -225,21 +225,26 @@ const AboutPage = () => {
               className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
               data-aos="fade-right"
               data-aos-duration="1500"
-            >
-              I'm Yash Kukreja — a driven Embedded Systems Developer and content
-              creator{" "}
-              <span className="text-purple-400 font-medium">@bhagauti__</span>{" "}
-              with a strong foundation in IoT, Robotics, and PCB Design.
-              Certified Embedded C with Gen AI, ESP32, and
-              Arduino ecosystems. I've mentored 20+ engineering students on
-              complex capstone projects and taught electronics with Simple
-              Sphere Technologies." Industry highlights include developing humanoid robotics
-              alongside{" "}
+             >
+              I'm Yash Kukreja — a passionate Embedded Systems Developer, 
+              <span className="text-indigo-400 font-medium"> Freelancer | Content Creator | Innovator | Engineer </span>, 
+                 with a strong foundation in IoT, Robotics, and PCB Design. 
+                 Certified in Embedded C with Gen AI, ESP32, and Arduino ecosystems, 
+                 I’ve mentored 20+ engineering students on complex capstone projects and 
+                delivered hands-on electronics training at{" "}
               <span className="text-indigo-400 font-medium">
-                Ecrucx Bot Pvt. Ltd.
-              </span>{" "}
-              and showcasing innovations at IMC '25 — turning theoretical
-              concepts into smart, real-world solutions.I am also suggested for Innovation ambasdor in IIC by my college.
+                Simple Sphere Technologies
+              </span>. 
+
+                Industry highlights include contributing to humanoid robotics development at{" "}
+                <span className="text-indigo-400 font-medium">
+                 Ecrucx Bot Pvt. Ltd.
+                </span>{" "}
+                and showcasing innovative solutions at IMC '25 — transforming theoretical 
+                concepts into impactful, real-world applications. 
+
+                I’ve also been recommended as an Innovation Ambassador under IIC by my college, 
+                reflecting my commitment to innovation and technology-driven problem solving.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">

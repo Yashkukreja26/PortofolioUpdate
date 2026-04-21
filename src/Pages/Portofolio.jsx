@@ -566,10 +566,18 @@ export default function FullWidthTabs() {
     href="https://drive.google.com/drive/folders/1Mtwsu3hm_v2TdnfCrUXpQ8-8-RWj7XI7?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white text-base font-semibold shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-  >
-    <span> 📁 Access My Projects</span>
-          </a>
+    className="vibrate group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-base font-semibold shadow-lg overflow-hidden hover:shadow-purple-500/50 hover:shadow-2xl transition-shadow duration-300"
+    >
+    {/* Shine sweep on hover */}
+    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+
+    {/* Icon + Text */}
+    <span className="relative flex items-center gap-2">
+      <span className="text-xl">📁</span>
+      <span className="tracking-wide">Access My Projects</span>
+      <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">→</span>
+    </span>
+</a>
         </div>
       </div>
 
