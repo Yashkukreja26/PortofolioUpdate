@@ -132,21 +132,10 @@ const AboutPage = () => {
       localStorage.getItem("certificates") || "[]"
     );
 
-    const startDate = new Date("2024-07-17");
-    const today = new Date();
-    const experience =
-      today.getFullYear() -
-      startDate.getFullYear() -
-      (today <
-      new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate())
-        ? 1
-        : 0);
-
     return {
       totalProjects: storedProjects.length,
       totalCertificates: storedCertificates.length,
-      YearExperience: experience,
-    
+      YearExperience: "2.5+",
     };
   }, []);
 
@@ -182,7 +171,7 @@ const AboutPage = () => {
         color: "from-[#6366f1] to-[#a855f7]",
         value: totalProjects,
         label: "Total Projects",
-        description: "Innovative web solutions crafted",
+        description: "Innovative embedded solutions crafted",
         animation: "fade-right",
       },
       {
@@ -228,7 +217,7 @@ const AboutPage = () => {
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-             Yash Kukreja
+                Yash Kukreja
               </span>
             </h2>
 
@@ -237,14 +226,24 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-          Turning Ideas into Smart Embedded SolutionsI’m Yash Kukreja, a passionate and hands-on Jr. Embedded Systems Engineer with deep expertise in IoT, PCB Design, and Microcontroller Programming. With 1+ year of experience and 50+ capstone projects under my belt, I specialize in crafting real-world innovations that blend intelligent electronics with user-friendly design.
+              I'm Yash Kukreja — a driven Embedded Systems Developer and content
+              creator{" "}
+              <span className="text-purple-400 font-medium">@bhagauti__</span>{" "}
+              with a strong foundation in IoT, Robotics, and PCB Design.
+              Certified Embedded C with Gen AI, ESP32, and
+              Arduino ecosystems. I've mentored 20+ engineering students on
+              complex capstone projects and taught electronics with Simple
+              Sphere Technologies." Industry highlights include developing humanoid robotics
+              alongside{" "}
+              <span className="text-indigo-400 font-medium">
+                Ecrucx Bot Pvt. Ltd.
+              </span>{" "}
+              and showcasing innovations at IMC '25 — turning theoretical
+              concepts into smart, real-world solutions.I am also suggested for Innovation ambasdor in IIC by my college.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a
-                href=""
-                className="w-full lg:w-auto"
-              >
+              <a href="" className="w-full lg:w-auto">
                 <button
                   data-aos="fade-up"
                   data-aos-duration="800"
@@ -267,8 +266,6 @@ const AboutPage = () => {
 
           <ProfileImage />
         </div>
-      
-   
 
         <a href="#Portofolio">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
@@ -309,4 +306,3 @@ const AboutPage = () => {
 };
 
 export default memo(AboutPage);
-

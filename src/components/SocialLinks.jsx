@@ -22,18 +22,18 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@yashkukreja26",
+    subText: "@bhagauti__",
     icon: Instagram,
-    url: "https://www.instagram.com/yashkukreja26?igsh=MTg5dHZybDZ3cjRvaQ==",
+    url: "https://www.instagram.com/bhagauti__?igsh=MWFhcnlxcXRwNzYyaQ==",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]"
   },
   {
     name: "YouTube",
     displayName: "Youtube",
-    subText: "@yashkukreja",
+    subText: "@BHAGAUTI13",
     icon: Youtube,
-    url: "https://youtube.com/@yashkukreja-t2v?si=uEicK0q3c2u1wjpK",
+    url: "https://www.youtube.com/@BHAGAUTI13",
     color: "#FF0000",
     gradient: "from-[#FF0000] to-[#CC0000]"
   },
@@ -47,7 +47,7 @@ const socialLinks = [
     gradient: "from-[#333] to-[#24292e]"
   },
   {
-     name: "Twitter",
+    name: "Twitter",
     displayName: "Twitter",
     subText: "@yashkukreja",
     icon: Twitter,
@@ -179,7 +179,7 @@ const SocialLinks = () => {
           ))}
         </div>
 
-        {/* Third Row - GitHub & TikTok */}
+        {/* Third Row - GitHub & Twitter */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[github, tiktok].map((link) => (
             <a

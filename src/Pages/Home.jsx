@@ -93,12 +93,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS=["Arduino","ESP32","Automation"];
+const WORDS = ["Arduino", "ESP32", "Automation"];
 const TECH_STACK = ["IOT", "PCB Design", "Microcontrollers", "C with GEN AI"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/Yashkukreja26?tab=projects" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/yash-kukreja-54b488374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/" },
-  { icon: Instagram, link: "https://www.instagram.com/yashkukreja26?igsh=MTg5dHZybDZ3cjRvaQ==/" },
+  { icon: Instagram, link: "https://www.instagram.com/bhagauti__?igsh=MWFhcnlxcXRwNzYyaQ==" },
 ];
 
 const Home = () => {
@@ -155,6 +155,7 @@ const Home = () => {
     );
     return () => clearTimeout(timeout);
   }, [handleTyping]);
+
   return (
     <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
       <div
@@ -254,10 +255,10 @@ const Home = () => {
                   }`}
                 >
                   <img
-    src="/coding.gif"
-    alt="Coding Animation"
-    className="w-full h-full object-contain"
-  />
+                    src="/coding.gif"
+                    alt="Coding Animation"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
                 <div
