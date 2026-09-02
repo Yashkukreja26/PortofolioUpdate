@@ -21,8 +21,8 @@ const StatusBadge = memo(() => (
       <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
       <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
         <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text sm:text-sm text-[0.7rem] font-medium flex items-center">
-          <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
-          Ready to Innovate
+          <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-purple-400" />
+          Founder @ Bhagauti Engineering
         </span>
       </div>
     </div>
@@ -57,7 +57,7 @@ const TechStack = memo(({ tech }) => (
 
 const CTAButton = memo(({ href, text, icon: Icon }) => (
   <a href={href}>
-    <button className="group relative w-[160px]">
+    <button className="group relative w-[155px]">
       <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
       <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
         <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#4f52c9]/20 to-[#8644c5]/20"></div>
@@ -93,12 +93,18 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Arduino", "ESP32", "Automation"];
-const TECH_STACK = ["IOT", "PCB Design", "Microcontrollers", "C with GEN AI"];
+const WORDS = [
+  "Embedded Systems",
+  "Founder @ bhagauti.in",
+  "IoT & Robotics",
+  "KiCad PCB Designer",
+  "Microcontrollers & ROS 2"
+];
+const TECH_STACK = ["ESP32 & Arduino", "KiCad PCB Design", "Embedded C & ROS 2", "IoT Telemetry", "bhagauti.in"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/Yashkukreja26?tab=projects" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/yash-kukreja-54b488374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/" },
-  { icon: Instagram, link: "https://www.instagram.com/bhagauti__?igsh=MWFhcnlxcXRwNzYyaQ==" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/yashkukreja1313dgtb" },
+  { icon: Instagram, link: "https://www.instagram.com/bhagauti.in/" },
 ];
 
 const Home = () => {
@@ -157,14 +163,14 @@ const Home = () => {
   }, [handleTyping]);
 
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
+    <div className="min-h-screen bg-[#030014] overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 flex items-center" id="Home">
       <div
-        className={`relative z-10 transition-all duration-1000 ${
+        className={`relative z-10 w-full transition-all duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+        <div className="container mx-auto px-[5%] sm:px-[5%] lg:px-[10%]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
             {/* Left Column */}
             <div
               className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
@@ -193,7 +199,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  "Electronics Engineer specializing in Embedded Systems, IoT, Automation, Robotics, and PCB Design to build smart, innovative solutions."
+                  "Electronics and Computer Engineering undergraduate & Founder of BHAGAUTI Engineering. Building intelligent hardware, IoT capstone systems, and humanoid robotics that solve real-world challenges."
                 </p>
 
                 {/* Tech Stack */}
@@ -209,7 +215,7 @@ const Home = () => {
 
                 {/* CTA Buttons */}
                 <div
-                  className="flex flex-row gap-3 w-full justify-start"
+                  className="flex flex-wrap gap-3 w-full justify-start"
                   data-aos="fade-up"
                   data-aos-delay="1400"
                 >
@@ -217,6 +223,11 @@ const Home = () => {
                     href="#Portofolio"
                     text="Projects"
                     icon={ExternalLink}
+                  />
+                  <CTAButton
+                    href="#Bhagauti"
+                    text="Bhagauti.in"
+                    icon={Sparkles}
                   />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
                 </div>

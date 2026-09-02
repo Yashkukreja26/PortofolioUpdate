@@ -13,7 +13,10 @@ import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
-import { Award, Boxes } from "lucide-react";
+import CardProject from "../components/CardProject";
+import { Award, Boxes, Code2, Cpu, Wrench, Radio } from "lucide-react";
+import { projects } from "../data/projects";
+import { skillsData } from "../data/resumeData";
 
 const ToggleButton = ({ onClick, isShowingMore }) => (
   <button
@@ -78,7 +81,7 @@ function TabPanel({ children, value, index, ...other }) {
     >
       {value === index && (
         <Box sx={{ p: { xs: 1, sm: 3 } }}>
-          <Typography>{children}</Typography>
+          <Typography component="div">{children}</Typography>
         </Box>
       )}
     </div>
@@ -100,11 +103,11 @@ function a11yProps(index) {
 
 const techStacks = [
   { icon: "embedded.jpg", language: "Embedded C" },
-  { icon: "ESP.jpg", language: "ESP" },
+  { icon: "ESP.jpg", language: "ESP32 / ESP8266" },
   { icon: "auto.jpg", language: "Automation" },
   { icon: "ardio.jpg", language: "Arduino" },
-  { icon: "iot.jpg", language: "IoT" },
-  { icon: "pcb.jpg", language: "PCB Design" },
+  { icon: "iot.jpg", language: "IoT Telemetry" },
+  { icon: "pcb.jpg", language: "PCB Design (KiCad)" },
 ];
 
 export default function FullWidthTabs() {
@@ -115,18 +118,22 @@ export default function FullWidthTabs() {
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
-  // Static certificates including CC1, CC2, CC3, CC4
+  // Static certificates including verified internship & education certificates
   const staticCertificates = [
+    { ImgSertif: "ele4.jpg" },        // Pantech Solutions Internship on PCB Design
+    { ImgSertif: "electrosoft.jpg" }, // Electrosoft System Intern Engineer
+    { ImgSertif: "ele1.jpg" },        // Electrosoft Embedded System Training
+    { ImgSertif: "ele5.jpg" },        // MSBTE Diploma in EXTC
+    { ImgSertif: "CC1.jpeg" },
+    { ImgSertif: "CC2.jpeg" },
+    { ImgSertif: "CC3.jpeg" },
+    { ImgSertif: "CC4.jpeg" },
     { ImgSertif: "aba.jpg" },
     { ImgSertif: "bac.jpg" },
     { ImgSertif: "yaaa.jpg" },
     { ImgSertif: "abcd.jpg" },
     { ImgSertif: "abs.jpg" },
     { ImgSertif: "abcde.jpg" },
-    { ImgSertif: "CC1.jpeg" },
-    { ImgSertif: "CC2.jpeg" },
-    { ImgSertif: "CC3.jpeg" },
-    { ImgSertif: "CC4.jpeg" },
   ];
 
   const fetchData = useCallback(async () => {
@@ -169,28 +176,25 @@ export default function FullWidthTabs() {
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Portfolio Showcase
+            Portfolio & Engineering Showcase
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through certifications and technical expertise.
+          Explore capstone projects, professional certifications, and technical proficiencies.
         </p>
 
         {/* Project Link */}
-        <div className="mt-4">
+        <div className="mt-4 flex flex-wrap justify-center gap-3">
           <a
             href="https://drive.google.com/drive/folders/1Mtwsu3hm_v2TdnfCrUXpQ8-8-RWj7XI7?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="vibrate group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-base font-semibold shadow-lg overflow-hidden hover:shadow-purple-500/50 hover:shadow-2xl transition-shadow duration-300"
+            className="vibrate group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm sm:text-base font-semibold shadow-lg overflow-hidden hover:shadow-purple-500/50 hover:shadow-2xl transition-shadow duration-300"
           >
-            {/* Shine sweep on hover */}
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
-
-            {/* Icon + Text */}
             <span className="relative flex items-center gap-2">
               <span className="text-xl">📁</span>
-              <span className="tracking-wide">Access My Projects</span>
+              <span className="tracking-wide">Access Project Schematics & Files</span>
               <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">→</span>
             </span>
           </a>
@@ -230,14 +234,14 @@ export default function FullWidthTabs() {
             sx={{
               minHeight: "70px",
               "& .MuiTab-root": {
-                fontSize: { xs: "0.9rem", md: "1rem" },
+                fontSize: { xs: "0.85rem", md: "1rem" },
                 fontWeight: "600",
                 color: "#94a3b8",
                 textTransform: "none",
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 padding: "20px 0",
                 zIndex: 1,
-                margin: "8px",
+                margin: "6px",
                 borderRadius: "12px",
                 "&:hover": {
                   color: "#ffffff",
@@ -264,8 +268,9 @@ export default function FullWidthTabs() {
               },
             }}
           >
-            <Tab icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />} label="Certificates" {...a11yProps(0)} />
-            <Tab icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />} label="Tech Stack" {...a11yProps(1)} />
+            <Tab icon={<Code2 className="mb-2 w-5 h-5 transition-all duration-300" />} label="Featured Projects" {...a11yProps(0)} />
+            <Tab icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />} label="Certificates" {...a11yProps(1)} />
+            <Tab icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />} label="Tech Stack" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
 
@@ -274,9 +279,33 @@ export default function FullWidthTabs() {
           index={value}
           onChangeIndex={setValue}
         >
+          {/* Panel 0: Projects */}
           <TabPanel value={value} index={0} dir={theme.direction}>
+            <div className="container mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                  >
+                    <CardProject
+                      id={project.id}
+                      Img={project.Img}
+                      Title={project.Title}
+                      Description={project.Description}
+                      Link={project.Link}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </TabPanel>
+
+          {/* Panel 1: Certificates */}
+          <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4 w-full">
                 {displayedCertificates.map((certificate, index) => (
                   <div
                     key={index}
@@ -295,8 +324,10 @@ export default function FullWidthTabs() {
             )}
           </TabPanel>
 
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
+          {/* Panel 2: Tech Stack */}
+          <TabPanel value={value} index={2} dir={theme.direction}>
+            <div className="container mx-auto space-y-10 pb-[5%]">
+              {/* Primary Tech Badges */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
                 {techStacks.map((stack, index) => (
                   <div
@@ -305,6 +336,33 @@ export default function FullWidthTabs() {
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
                     <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                  </div>
+                ))}
+              </div>
+
+              {/* Categorized Skills Breakdown */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                {Object.entries(skillsData).map(([category, skills], idx) => (
+                  <div
+                    key={category}
+                    data-aos="fade-up"
+                    data-aos-delay={idx * 100}
+                    className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-purple-500/30 transition-all"
+                  >
+                    <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
+                      {category}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skills.map((skill, sIdx) => (
+                        <span
+                          key={sIdx}
+                          className="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-300 hover:text-white hover:border-indigo-400/40 transition-colors"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import {
   ChevronRight, Layers, Layout, Globe, Package, Cpu, Code,
 } from "lucide-react";
 import Swal from 'sweetalert2';
+import { projects as defaultProjects } from "../data/projects";
 
 const TECH_ICONS = {
   React: Globe,
@@ -61,7 +62,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-blue-200">{techStackCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Total Teknologi</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Technologies</div>
         </div>
       </div>
 
@@ -71,7 +72,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Fitur Utama</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Key Features</div>
         </div>
       </div>
     </div>
@@ -83,9 +84,9 @@ const handleGithubClick = (githubLink) => {
     Swal.fire({
       icon: 'info',
       title: 'Source Code Private',
-      text: 'Maaf, source code untuk proyek ini bersifat privat.',
-      confirmButtonText: 'Mengerti',
-      confirmButtonColor: '#3085d6',
+      text: 'The source code or schematic for this project is proprietary or confidential.',
+      confirmButtonText: 'Understood',
+      confirmButtonColor: '#6366f1',
       background: '#030014',
       color: '#ffffff'
     });
@@ -103,14 +104,15 @@ const ProjectDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-    const selectedProject = storedProjects.find((p) => String(p.id) === id);
+    const allProjects = [...defaultProjects, ...storedProjects];
+    const selectedProject = allProjects.find((p) => String(p.id) === String(id));
     
     if (selectedProject) {
       const enhancedProject = {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || 'https://github.com/EkiZR',
+        Github: selectedProject.Github || 'https://github.com/Yashkukreja26?tab=projects',
       };
       setProject(enhancedProject);
     }

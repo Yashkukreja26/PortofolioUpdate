@@ -5,7 +5,7 @@ import {
   Instagram,
   Youtube,
   ExternalLink,
-  Twitter
+  Globe
 } from "lucide-react";
 
 const socialLinks = [
@@ -14,7 +14,7 @@ const socialLinks = [
     displayName: "Let's Connect",
     subText: "on LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/yash-kukreja-54b488374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apphttps://www.linkedin.com/in/yash-kukreja-54b488374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    url: "https://www.linkedin.com/in/yashkukreja1313dgtb",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true
@@ -22,15 +22,15 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@bhagauti__",
+    subText: "@bhagauti.in",
     icon: Instagram,
-    url: "https://www.instagram.com/bhagauti__?igsh=MWFhcnlxcXRwNzYyaQ==",
+    url: "https://www.instagram.com/bhagauti.in/",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]"
   },
   {
     name: "YouTube",
-    displayName: "Youtube",
+    displayName: "YouTube",
     subText: "@BHAGAUTI13",
     icon: Youtube,
     url: "https://www.youtube.com/@BHAGAUTI13",
@@ -39,21 +39,21 @@ const socialLinks = [
   },
   {
     name: "GitHub",
-    displayName: "Github",
-    subText: "@yashkukreja",
+    displayName: "GitHub",
+    subText: "Yashkukreja26",
     icon: Github,
     url: "https://github.com/Yashkukreja26?tab=projects",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]"
   },
   {
-    name: "Twitter",
-    displayName: "Twitter",
-    subText: "@yashkukreja",
-    icon: Twitter,
-    url: "https://twitter.com/your_handle",
-    color: "#1DA1F2",
-    gradient: "from-[#1DA1F2] to-[#0d8bfd]"
+    name: "Bhagauti",
+    displayName: "bhagauti.in",
+    subText: "Official Venture",
+    icon: Globe,
+    url: "https://bhagauti.in",
+    color: "#a855f7",
+    gradient: "from-[#6366f1] to-[#a855f7]"
   }
 ];
 

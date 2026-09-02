@@ -125,19 +125,36 @@ const StatCard = memo(
 );
 
 const AboutPage = () => {
-  // Memoized calculations
-  const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
-    const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
-    const storedCertificates = JSON.parse(
-      localStorage.getItem("certificates") || "[]"
-    );
-
-    return {
-      totalProjects: storedProjects.length,
-      totalCertificates: storedCertificates.length,
-      YearExperience: "2.5+",
-    };
-  }, []);
+  // Memoized stats data from updated resume
+  const statsData = useMemo(
+    () => [
+      {
+        icon: Code,
+        color: "from-[#6366f1] to-[#a855f7]",
+        value: "25+",
+        label: "Capstone Projects",
+        description: "Embedded & IoT solutions delivered",
+        animation: "fade-right",
+      },
+      {
+        icon: Award,
+        color: "from-[#a855f7] to-[#6366f1]",
+        value: "50+",
+        label: "Students Mentored",
+        description: "Practical IoT & robotics training",
+        animation: "fade-up",
+      },
+      {
+        icon: Globe,
+        color: "from-[#6366f1] to-[#a855f7]",
+        value: "2+ Years",
+        label: "Engineering Experience",
+        description: "Hardware prototyping & PCB design",
+        animation: "fade-left",
+      },
+    ],
+    []
+  );
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -162,37 +179,6 @@ const AboutPage = () => {
       clearTimeout(resizeTimer);
     };
   }, []);
-
-  // Memoized stats data
-  const statsData = useMemo(
-    () => [
-      {
-        icon: Code,
-        color: "from-[#6366f1] to-[#a855f7]",
-        value: totalProjects,
-        label: "Total Projects",
-        description: "Innovative embedded solutions crafted",
-        animation: "fade-right",
-      },
-      {
-        icon: Award,
-        color: "from-[#a855f7] to-[#6366f1]",
-        value: totalCertificates,
-        label: "Certificates",
-        description: "Professional skills validated",
-        animation: "fade-up",
-      },
-      {
-        icon: Globe,
-        color: "from-[#6366f1] to-[#a855f7]",
-        value: YearExperience,
-        label: "Years of Experience",
-        description: "Continuous learning journey",
-        animation: "fade-left",
-      },
-    ],
-    [totalProjects, totalCertificates, YearExperience]
-  );
 
   return (
     <div
@@ -225,36 +211,33 @@ const AboutPage = () => {
               className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
               data-aos="fade-right"
               data-aos-duration="1500"
-             >
-              I'm Yash Kukreja — a passionate Embedded Systems Developer, 
-              <span className="text-indigo-400 font-medium"> Freelancer | Content Creator | Innovator | Engineer </span>, 
-                 with a strong foundation in IoT, Robotics, and PCB Design. 
-                 Certified in Embedded C with Gen AI, ESP32, and Arduino ecosystems, 
-                 I’ve mentored 20+ engineering students on complex capstone projects and 
-                delivered hands-on electronics training at{" "}
-              <span className="text-indigo-400 font-medium">
-                Simple Sphere Technologies
-              </span>. 
-
-                Industry highlights include contributing to humanoid robotics development at{" "}
-                <span className="text-indigo-400 font-medium">
-                 Ecrucx Bot Pvt. Ltd.
-                </span>{" "}
-                and showcasing innovative solutions at IMC '25 — transforming theoretical 
-                concepts into impactful, real-world applications. 
-
-                I’ve also been recommended as an Innovation Ambassador under IIC by my college, 
-                reflecting my commitment to innovation and technology-driven problem solving.
+            >
+              I am an Electronics and Computer Engineering undergraduate at{" "}
+              <span className="text-indigo-400 font-medium">DBATU</span> with 2+ years of hands-on experience in Embedded Systems, IoT, Robotics, and PCB Design through internships, freelance engineering projects, and product development.
+              <br className="my-2" />
+              As Founder of{" "}
+              <a href="#Bhagauti" className="text-indigo-400 font-semibold underline hover:text-purple-300 transition-colors">
+                BHAGAUTI Engineering
+              </a>{" "}
+              (<span className="text-pink-400 font-mono text-sm">bhagauti.in</span>), I have delivered <span className="text-white font-medium">25+ embedded and IoT capstone solutions</span> while mentoring <span className="text-white font-medium">50+ engineering students</span> through Simple Sphere Technologies.
+              <br className="my-2" />
+              Industry highlights include collaborating on the mechanical assembly and embedded electronics of the{" "}
+              <span className="text-indigo-400 font-medium">AARYA Humanoid Robot</span> at EcruxBotTech Pvt. Ltd. (showcased at IMC 2025), PCB design internships at Pantech Solutions, and training at Electrosoft Systems. Recommended as an Innovation Ambassador under IIC, I am dedicated to building intelligent hardware systems that solve real-world engineering challenges.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="" className="w-full lg:w-auto">
+              <a
+                href="https://drive.google.com/drive/folders/1Mtwsu3hm_v2TdnfCrUXpQ8-8-RWj7XI7?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full lg:w-auto"
+              >
                 <button
                   data-aos="fade-up"
                   data-aos-duration="800"
                   className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
                 >
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV / Docs
                 </button>
               </a>
               <a href="#Portofolio" className="w-full lg:w-auto">

@@ -9,7 +9,9 @@ const Navbar = () => {
     const navItems = [
         { href: "#Home", label: "Home" },
         { href: "#About", label: "About" },
-        { href: "#Portofolio", label: "Portofolio" },
+        { href: "#Bhagauti", label: "Bhagauti.in", isVenture: true },
+        { href: "#Experience", label: "Experience" },
+        { href: "#Portofolio", label: "Portfolio" },
         { href: "#Contact", label: "Contact" },
     ];
 
@@ -71,11 +73,11 @@ const Navbar = () => {
             isOpen
                 ? "bg-[#030014] opacity-100"
                 : scrolled
-                ? "bg-[#030014]/50 backdrop-blur-xl"
-                : "bg-transparent"
+                ? "bg-[#030014]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-purple-950/20"
+                : "bg-[#030014]/40 backdrop-blur-md"
         }`}
     >
-        <div className="mx-auto px-4 sm:px-6 lg:px-[10%]">
+        <div className="mx-auto px-[5%] sm:px-[5%] lg:px-[10%]">
             <div className="flex items-center justify-between h-16">
                 {/* Logo */}
                 <div className="flex-shrink-0">
@@ -99,13 +101,18 @@ const Navbar = () => {
                                 className="group relative px-1 py-2 text-sm font-medium"
                             >
                                 <span
-                                    className={`relative z-10 transition-colors duration-300 ${
+                                    className={`relative z-10 transition-colors duration-300 flex items-center gap-1.5 ${
                                         activeSection === item.href.substring(1)
                                             ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
                                             : "text-[#e2d3fd] group-hover:text-white"
                                     }`}
                                 >
                                     {item.label}
+                                    {item.isVenture && (
+                                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 font-normal">
+                                            Venture
+                                        </span>
+                                    )}
                                 </span>
                                 <span
                                     className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
@@ -139,7 +146,7 @@ const Navbar = () => {
     
         {/* Mobile Menu Overlay */}
         <div
-            className={`md:hidden h-2/5 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 h-auto pb-8 bg-[#030014]/95 backdrop-blur-2xl border-b border-white/10 transition-all duration-300 ease-in-out ${
                 isOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-[-100%] pointer-events-none"
@@ -147,24 +154,29 @@ const Navbar = () => {
             style={{ top: "64px" }}
         >
             <div className="flex flex-col h-full">
-                <div className="px-4 py-6 space-y-4 flex-1 ">
+                <div className="px-6 py-6 space-y-3 flex-1">
                     {navItems.map((item, index) => (
                         <a
                             key={item.label}
                             href={item.href}
                             onClick={(e) => scrollToSection(e, item.href)}
-                            className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
+                            className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ease ${
                                 activeSection === item.href.substring(1)
-                                    ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                    : "text-[#e2d3fd] hover:text-white"
+                                    ? "bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 text-white font-semibold border border-purple-500/30"
+                                    : "text-[#e2d3fd] hover:text-white hover:bg-white/5"
                             }`}
                             style={{
-                                transitionDelay: `${index * 100}ms`,
-                                transform: isOpen ? "translateX(0)" : "translateX(50px)",
+                                transitionDelay: `${index * 50}ms`,
+                                transform: isOpen ? "translateX(0)" : "translateX(30px)",
                                 opacity: isOpen ? 1 : 0,
                             }}
                         >
-                            {item.label}
+                            <span>{item.label}</span>
+                            {item.isVenture && (
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30">
+                                    Venture
+                                </span>
+                            )}
                         </a>
                     ))}
                 </div>
